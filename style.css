@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    padding: 13px 150px;
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(194, 194, 194, 0.801);
+    border-radius: 5px;
+}
+
+#gallery {
+    display: flex;
+    justify-content: flex-start; /* spacing for 4 pics per row and why
+    does it only affect bottom 4 pics and not all? space-evenly is proper for all */
+    flex-wrap: wrap;
+}
+
+#gallery img{
+    height: 23vw;
+    width: 23vw;
+    margin: 1vw;
+}
+
+#lighthouse {
+    background-color: rgba(0, 0, 0, .4);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.lighthouseImage {
+    width: 50%;
+    min-width: 300px;
+    position: absolute;
+    /*top, bottom, left and right is initiated when positioning is brought in*/
+    top: 0;
+    left: 0;
+}
+
+/* When there's a space in CSS, it refers to an element being in another element
+when the situation calls for it, but when there's no space and elements are
+together by dot, the elements are understood to be used together 
+((first time I've ever been able to use this))*/
+
+/* the "open" class is made in the JS file and toggled by such */
+#lighthouse.open {
+    display: block;
+}
