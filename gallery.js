@@ -74,12 +74,12 @@ const imageInfo = [
 // this loop is intended to iterate over img length by interpolation of gallery images
 //a console.log() will have ability to show all images and text from file folder on to page while connected to jQuery lightbox plugin
 
-populateImg(imageInfo); // takes all 12 images in array and passes it 
+populateImg(imageInfo); // takes all 12 images in array and passes it into populated img function
 
-//takes imageInfo transforms from this to the function below named galleryData set in the paramater in below function
+//takes imageInfo transforms from this to the function below named galleryData set in the parameter below
 
 function populateImg(galleryData) {
-    // empyting out the gallery then append - check line of code below 
+    // emptying out the gallery div then appends template literal which has images in it - check line of code below lines 85-88
     gallery.innerHTML = ""; 
 //for loop allows images to be appended while typing into the searchbar via jQuery library - keys in that has the data lightbox and title 
   for (let i = 0; i < galleryData.length; i++) {
@@ -88,13 +88,15 @@ function populateImg(galleryData) {
   }
 }
 
+// library for jQuery implemented requires the anchor tag to be selected for this to work in lines 85-88 above
+
 let searchBar = document.getElementById("search");
 
 searchBar.addEventListener("keyup", (e) => {
   var query = e.target.value;
   // filter works that if it returns true it becomes a new array and if not then its removed from new array - checks to see what word being typed 
   var filteredArray = imageInfo.filter((item) => {
-    return item.text.includes(query); // .includes returns true or false 
+    return item.text.includes(query); // .includes returns true or false if string has said character inside of it 
   });
   populateImg(filteredArray); // takes filtered array and gives portion of array back
 });
