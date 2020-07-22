@@ -96,7 +96,7 @@ searchBar.addEventListener("keyup", (e) => {
   var query = e.target.value;
   // filter works that if it returns true it becomes a new array and if not then its removed from new array - checks to see what word being typed 
   var filteredArray = imageInfo.filter((item) => {
-    return item.text.includes(query); // .includes returns true or false if string has said character inside of it 
+    return item.text.toLowerCase().includes(query.toLowerCase()); // .includes returns true or false if string has said character inside of it 
   });
   populateImg(filteredArray); // takes filtered array and gives portion of array back
 });

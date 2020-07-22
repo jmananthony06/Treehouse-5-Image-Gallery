@@ -4,7 +4,9 @@
 }
 
 input {
-    padding: 13px 150px;
+    padding: 13px 5%;
+    width: 60%;
+    max-width: 500px;
     display: flex;
     margin: auto;
     margin-top: 25px;
@@ -54,4 +56,33 @@ together by dot, the elements are understood to be used together
 /* the "open" class is made in the JS file and toggled by such */
 #lighthouse.open {
     display: block;
+}
+
+/*****************
+** Media Query **
+****************/
+
+@media (max-width: 600px) {
+    #gallery {
+        width: 85%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(245, 245, 245, 0.527);
+    }
+
+    #gallery img {
+        display: flex;
+        margin: auto;
+        margin-bottom: 30px;
+        align-items: center;
+        width: 85%;
+        height: 85%;
+    }
+
+    input {
+        
+    }    
+
 }
